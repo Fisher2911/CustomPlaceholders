@@ -1,0 +1,7 @@
+name: CustomPlaceholders
+main: io.github.fisher2911.customplaceholders.CustomPlaceholders
+version: 1.0.0
+api-version: 1.16
+commands:
+  customplaceholder:
+    description: Custom placeholders command

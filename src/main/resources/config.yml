@@ -1,0 +1,2 @@
+# How often in seconds the placeholders should be saved
+save-interval: 300
