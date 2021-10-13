@@ -1,6 +1,8 @@
 package io.github.fisher2911.customplaceholders.messages;
 
 import io.github.fisher2911.customplaceholders.CustomPlaceholders;
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 
@@ -43,14 +45,18 @@ public class Messages {
 
         final YamlConfiguration config = YamlConfiguration.loadConfiguration(file);
 
-        final String prefix = config.getString(PREFIX);
+        this.prefix = config.getString(PREFIX);
 
         for (final String key : config.getKeys(false)) {
             if (key.equals(prefix)) {
                 continue;
             }
-            this.messages.put(key, config.getString(key).replace("%prefix%", this.prefix));
+            this.messages.put(key,
+                    ChatColor.translateAlternateColorCodes('&',
+                            config.getString(key).replace("%prefix%", this.prefix)));
         }
     }
+
+
 
 }
